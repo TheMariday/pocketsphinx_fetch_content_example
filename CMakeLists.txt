@@ -18,5 +18,5 @@ target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_BINARY_DIR})
 target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_BINARY_DIR}/include)
 target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/src/util)
 
-add_executable(ps_test main.cpp)
+add_executable(ps_test simple.c)
 target_link_libraries(ps_test pocketsphinx)

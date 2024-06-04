@@ -12,18 +12,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(pocketsphinx)
 
-target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/src)
-target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/include)
+target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_SOURCE_DIR}/src)
+target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_SOURCE_DIR}/include)
+target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_BINARY_DIR})
+target_include_directories(pocketsphinx PUBLIC ${pocketsphinx_BINARY_DIR}/include)
 target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/src/util)
-
-target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_BINARY_DIR})
-target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_BINARY_DIR}/include)
-
-target_include_directories(pocketsphinx INTERFACE ${pocketsphinx_SOURCE_DIR}/include)
-target_include_directories(pocketsphinx INTERFACE ${pocketsphinx_BINARY_DIR}/include)
-target_include_directories(pocketsphinx INTERFACE ${pocketsphinx_SOURCE_DIR}/src)
-target_include_directories(pocketsphinx INTERFACE ${pocketsphinx_BINARY_DIR})
-
 
 add_executable(ps_test main.cpp)
 target_link_libraries(ps_test pocketsphinx)

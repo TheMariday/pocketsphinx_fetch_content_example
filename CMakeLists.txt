@@ -3,20 +3,14 @@ project(ps_test)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
 include(FetchContent)
 
 FetchContent_Declare(
         pocketsphinx
         GIT_REPOSITORY https://github.com/themariday/pocketsphinx.git
-        # GIT_REPOSITORY http://github.com/cmusphinx/pocketsphinx
 )
 
 FetchContent_MakeAvailable(pocketsphinx)
-
-message(pocketsphinx_SOURCE_DIR="${pocketsphinx_SOURCE_DIR}")
-
-
 
 target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/src)
 target_include_directories(pocketsphinx PRIVATE ${pocketsphinx_SOURCE_DIR}/include)

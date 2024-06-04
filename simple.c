@@ -1,3 +1,26 @@
+/* Example of simple PocketSphinx recognition.
+ *
+ * MIT license (c) 2022, see LICENSE for more information.
+ *
+ * Author: David Huggins-Daines <dhdaines@gmail.com>
+ */
+/**
+ * @example simple.c
+ * @brief Simplest possible example of speech recognition in C.
+ *
+ * This file shows how to use PocketSphinx to recognize a single input
+ * file.  To compile it, assuming you have built the library as in
+ * \ref unix_install "these directions", you can run:
+ *
+ *     cmake --build build --target simple
+ *
+ * Alternately, if PocketSphinx is installed system-wide, you can run:
+ *
+ *     gcc -o simple simple.c $(pkg-config --libs --cflags pocketsphinx)
+ *
+ *
+ */
+
 #include <pocketsphinx.h>
 #include <stdlib.h>
 
@@ -57,6 +80,6 @@ main(int argc, char *argv[])
     free(buf);
     ps_free(decoder);
     ps_config_free(config);
-
+        
     return 0;
 }
